@@ -4,10 +4,15 @@ const fs = require('fs')
 
 exports.createProduct = async (req, res)=>{
     try {
+        let thumbnail = ""
+        if(req.file){
+            console.log(req.file)
+            thumbnail = req.file.destination+"/"+req.file.filename
+        }
         const product = new Product({
             title: req.body.title,
             description: req.body.description,
-            thumbnail: req.body.thumbnail,
+            thumbnail: thumbnail,
             status: req.body.status,
         })
         await product.save()
@@ -61,11 +66,10 @@ exports.updateProduct= async (req, res)=>{
             product_details.status = false
         }
 
-        if(req.body.thumbnail){
+        if(req.file){
             product_details.thumbnail ? fs.unlinkSync(product_details.thumbnail) : null
-             product_details.thumbnail = req.body.thumbnail 
+            product_details.thumbnail = req.file.destination+"/"+req.file.filename
         }
-
 
         await product_details.save()
         
