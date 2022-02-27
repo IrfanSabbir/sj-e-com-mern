@@ -49,14 +49,25 @@ const ProductList = () => {
                 elevation={3}
                 style={{ textAlign: "center" }}
               >
-                <img
-                  src={process.env.REACT_APP_BASE_URL + product.thumbnail}
-                  alt={product.title}
-                  width="60%"
-                  height="150px"
-                  // height="auto"
-                  style={{ borderRadius: "10px", paddingBottom: "30px" }}
-                />
+                {product.thumbnail ? (
+                  <img
+                    src={process.env.REACT_APP_BASE_URL + product.thumbnail}
+                    alt={product.title}
+                    width="60%"
+                    height="150px"
+                    // height="auto"
+                    style={{ borderRadius: "10px", paddingBottom: "30px" }}
+                  />
+                ) : (
+                  <img
+                    src="https://via.placeholder.com/300"
+                    alt={product.title}
+                    width="60%"
+                    height="150px"
+                    // height="auto"
+                    style={{ borderRadius: "10px", paddingBottom: "30px" }}
+                  />
+                )}
                 <p>
                   Title: <b> {product.title}</b>
                 </p>
@@ -74,7 +85,6 @@ const ProductList = () => {
           );
         })}
       </Grid>
-
     </Container>
   );
 };

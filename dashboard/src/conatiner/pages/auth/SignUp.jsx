@@ -7,8 +7,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setpassword] = useState("");
-  const navigate= useNavigate();
-
+  const navigate = useNavigate();
 
   const signupHandler = (event) => {
     event.preventDefault();
@@ -19,7 +18,7 @@ const SignUp = () => {
     const inputData = {
       email,
       password,
-      name
+      name,
     };
     console.log(inputData);
     axios
@@ -29,8 +28,8 @@ const SignUp = () => {
         { headers: headers }
       )
       .then((result) => {
-        localStorage.setItem("token", result.data.token)
-        navigate('/');
+        localStorage.setItem("token", result.data.token);
+        navigate("/");
         window.location.reload(false);
       })
       .catch((error) => {

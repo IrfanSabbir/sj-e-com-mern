@@ -59,7 +59,7 @@ exports.addFeedback = async (req, res) => {
         error: true,
       });
     } else {
-      console.log(req.userData.name)
+
       const addFeedback = new Feedback({
         user_name: req.userData.name,
         comment: req.body.comment,
@@ -68,7 +68,9 @@ exports.addFeedback = async (req, res) => {
       });
       await addFeedback.save();
 
-      const feedbackList = await Feedback.find({ product_id: product_id }).sort({_id: -1});
+      const feedbackList = await Feedback.find({ product_id: product_id }).sort(
+        { _id: -1 }
+      );
 
       res.status(200).json({
         message: "Feedback added",

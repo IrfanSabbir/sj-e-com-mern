@@ -50,10 +50,7 @@ exports.signUp = async (req, res, next) => {
 exports.logIn = async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    console.log( email, password)
     const user = await User.findOne({ email: email, role: "customer" });
-    console.log( user)
-
     if (!user) {
       throw new Error("Invalid email, try again!");
     }

@@ -6,7 +6,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
 
-
   const loginHandler = (event) => {
     event.preventDefault();
 
@@ -25,7 +24,7 @@ const Login = () => {
         { headers: headers }
       )
       .then((result) => {
-        localStorage.setItem("token", result.data.token)
+        localStorage.setItem("token", result.data.token);
         window.location.reload(false);
 
         console.log(result);

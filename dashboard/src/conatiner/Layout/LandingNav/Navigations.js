@@ -7,8 +7,8 @@ import "./Navigation.css";
 
 const Navigations = (props) => {
   const [token, setToken] = useState("");
-  const navigate= useNavigate();
-  
+  const navigate = useNavigate();
+
   useEffect(() => {
     const authToken = localStorage.getItem("token");
     authToken && setToken(authToken);
@@ -50,15 +50,14 @@ const Navigations = (props) => {
         <>
           <div className="Toolbar">
             <Container className="Container" style={{ textAlign: "right" }}>
-
               <Button
                 variant="contained"
                 color="secondary"
                 style={{ textTransform: "none" }}
                 onClick={() => {
                   setToken("");
-                  localStorage.removeItem('token');
-                  navigate('/');
+                  localStorage.removeItem("token");
+                  navigate("/");
                   window.location.reload(false);
                 }}
               >
@@ -68,14 +67,13 @@ const Navigations = (props) => {
           </div>
           <Container fixed>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={12} md={4} lg={3} >
-                <div style={{ textAlign: "left", marginTop: "30px", }}>
+              <Grid item xs={12} sm={12} md={4} lg={3}>
+                <div style={{ textAlign: "left", marginTop: "30px" }}>
                   <p>
-
                     <NavLink
                       to="/list"
                       className="RightLink"
-                      style={{ textDecoration: "none", color: "tomato", }}
+                      style={{ textDecoration: "none", color: "tomato" }}
                     >
                       Product List
                     </NavLink>
@@ -89,15 +87,18 @@ const Navigations = (props) => {
                       Create Product
                     </NavLink>
                   </p>
-
                 </div>
               </Grid>
-              <Grid item xs={12} sm={12} md={8} lg={9} style={{ textAlign: "center" }}>
-
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={8}
+                lg={9}
+                style={{ textAlign: "center" }}
+              >
                 {props.children}
-
               </Grid>
-
             </Grid>
           </Container>
         </>

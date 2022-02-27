@@ -6,7 +6,6 @@ exports.createProduct = async (req, res)=>{
     try {
         let thumbnail = ""
         if(req.file){
-            console.log(req.file)
             thumbnail = req.file.destination+"/"+req.file.filename
         }
         const product = new Product({

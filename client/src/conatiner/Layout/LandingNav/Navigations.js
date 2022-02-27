@@ -16,10 +16,9 @@ const Navigations = (props) => {
   return (
     <>
       {!token ? (
-        <div className="Toolbar" >
-          <Container className="Container" >
+        <div className="Toolbar">
+          <Container className="Container">
             <div style={{ textAlign: "left" }}>
-
               <NavLink
                 to="/"
                 className="RightLink"
@@ -63,7 +62,6 @@ const Navigations = (props) => {
           <div className="Toolbar">
             <Container className="Container" style={{ textAlign: "right" }}>
               <div style={{ textAlign: "left" }}>
-
                 <NavLink
                   to="/"
                   className="RightLink"
@@ -79,8 +77,8 @@ const Navigations = (props) => {
                   style={{ textTransform: "none" }}
                   onClick={() => {
                     setToken("");
-                    localStorage.removeItem('token');
-                    navigate('/');
+                    localStorage.removeItem("token");
+                    navigate("/");
                     window.location.reload(false);
                   }}
                 >
@@ -89,7 +87,6 @@ const Navigations = (props) => {
               </div>
             </Container>
           </div>
-
         </>
       )}
     </>

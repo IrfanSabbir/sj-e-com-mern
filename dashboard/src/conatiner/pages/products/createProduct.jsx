@@ -10,7 +10,7 @@ const CreateProduct = () => {
   const [image, setImage] = useState();
   const [inputRef, setInputRef] = useState(null);
 
-  const history  = useNavigate();
+  const history = useNavigate();
 
   const productHandler = (event) => {
     event.preventDefault();
@@ -34,7 +34,7 @@ const CreateProduct = () => {
     )
       .then((result) => {
         console.log(result);
-        history ('/list')
+        history('/list')
       })
       .catch((error) => {
         console.log(error);
