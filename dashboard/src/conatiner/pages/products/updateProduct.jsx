@@ -60,7 +60,6 @@ const UpdateProduct = () => {
     formData.append("description", description);
     formData.append("status", status);
     image && formData.append("image", image);
-    console.log(formData);
     axios
       .put(
         process.env.REACT_APP_BASE_URL + "admin_api/product/" + product_id,
@@ -68,7 +67,6 @@ const UpdateProduct = () => {
         { headers: headers }
       )
       .then((result) => {
-        console.log(result);
         history("/list");
       })
       .catch((error) => {
@@ -77,7 +75,6 @@ const UpdateProduct = () => {
   };
 
   const fileSelectHandler = (e) => {
-    console.log(e.target.files[0]);
     setImage(e.target.files[0]);
   };
   if (loader) return <p>Loading....</p>;

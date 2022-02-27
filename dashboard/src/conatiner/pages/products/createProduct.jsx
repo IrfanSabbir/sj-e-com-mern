@@ -33,7 +33,6 @@ const CreateProduct = () => {
       { headers: headers }
     )
       .then((result) => {
-        console.log(result);
         history('/list')
       })
       .catch((error) => {
@@ -42,7 +41,6 @@ const CreateProduct = () => {
   };
 
   const fileSelectHandler = (e) => {
-    console.log(e.target.files[0])
     setImage(e.target.files[0])
 
   }

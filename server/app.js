@@ -21,7 +21,7 @@ app.use((req, res, next)=>{
 
 const db = async ()=>{
     try {
-        const success = await mongoose.connect(process.env.MONGO_URI,{
+        const success = await mongoose.connect(process.env.MONGO_ATLAS_URI,{
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true,

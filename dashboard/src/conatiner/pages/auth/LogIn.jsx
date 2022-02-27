@@ -16,7 +16,6 @@ const Login = () => {
       email,
       password,
     };
-    console.log(inputData);
     axios
       .post(
         process.env.REACT_APP_BASE_URL + "admin_api/auth/login",
@@ -26,8 +25,6 @@ const Login = () => {
       .then((result) => {
         localStorage.setItem("token", result.data.token);
         window.location.reload(false);
-
-        console.log(result);
       })
       .catch((error) => {
         console.log(error);

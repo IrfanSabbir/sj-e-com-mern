@@ -20,7 +20,6 @@ const SignUp = () => {
       password,
       name,
     };
-    console.log(inputData);
     axios
       .post(
         process.env.REACT_APP_BASE_URL + "admin_api/auth/signup",

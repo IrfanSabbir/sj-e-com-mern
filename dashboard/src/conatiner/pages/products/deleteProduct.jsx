@@ -23,7 +23,7 @@ export default function DeleteContaier(props) {
       )
       .then((res) => {
         alert("product is deleted");
-        console.log(res.data.body);
+        props.handleDeletedProduct(props.product._id);
       })
       .catch((err) => {
         console.log(err);

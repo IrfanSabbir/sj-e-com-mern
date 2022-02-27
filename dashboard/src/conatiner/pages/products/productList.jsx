@@ -68,6 +68,11 @@ const ProductList = () => {
     }
   };
 
+  const handleDeletedProduct = (id) => {
+    setProducts(products.filter(p => p._id !== id ));
+    setDeleteModal(false);
+  }
+
   const createData = (product) => {
     const title = product.title;
     const status = product.status ? "Active" : "Unactive";
@@ -117,6 +122,7 @@ const ProductList = () => {
         </div>
       );
     });
+  
   if (loader) return <p>Loading....</p>;
 
   return (
@@ -129,6 +135,7 @@ const ProductList = () => {
           open={deleteModal}
           handleClose={setDeleteModal}
           product={product}
+          handleDeletedProduct={handleDeletedProduct}
         />
       )}
       {!loader && (
