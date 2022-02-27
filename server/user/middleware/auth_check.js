@@ -21,7 +21,8 @@ module.exports = async (req, res, next)=>{
         }
         req.userData ={
             id : decodeToken.id,
-            email: decodeToken.email
+            email: decodeToken.email,
+            name: exist.name,
         }
 
         next()
