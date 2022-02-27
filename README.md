@@ -1,6 +1,7 @@
 # sj-e-com-mern
 
 ## Clone the Repo
+## Go to project folder
 ## cd server & run =>  yarn / npm install
 ## back to root, cd ..
 ## cd dashboard  &  run   =>   yarn / npm install
